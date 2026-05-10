@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070711" />
+  <title>ALEX VEGA — Full-Stack Engineer & Creative Technologist</title>
+  <meta name="description" content="Premium portfolio of Alex Vega — full-stack engineer crafting immersive digital experiences at the edge of design and technology." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Syncopate:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated background layers -->
+  <div class="bg-layer bg-grid" aria-hidden="true"></div>
+  <canvas id="particles" class="bg-layer bg-particles" aria-hidden="true"></canvas>
+  <div class="bg-layer bg-glow" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="bg-layer bg-noise" aria-hidden="true"></div>
+  <div class="bg-layer bg-scanline" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">AV</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-text" id="loaderText">INITIALIZING SYSTEM · 0%</div>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <a class="nav-logo magnetic" href="#home">
+      <span class="logo-mark">
+        <svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#00f5ff"/>
+              <stop offset="1" stop-color="#b845ff"/>
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 L36 30 L20 38 L4 30 L4 10 Z" fill="none" stroke="url(#lg)" stroke-width="2"/>
+          <path d="M12 26 L20 10 L28 26 M15 22 L25 22" fill="none" stroke="url(#lg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="logo-text">ALEX<em>.</em>VEGA</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#home" class="nav-link" data-num="01">Home</a>
+      <a href="#about" class="nav-link" data-num="02">About</a>
+      <a href="#work" class="nav-link" data-num="03">Work</a>
+      <a href="#stack" class="nav-link" data-num="04">Stack</a>
+      <a href="#contact" class="nav-link" data-num="05">Contact</a>
+    </nav>
+
+    <a href="#contact" class="nav-cta magnetic">
+      <span>Let's Talk</span>
+      <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+
+    <button class="nav-burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+  </header>
+
+  <!-- Side meta -->
+  <aside class="side side-left" aria-hidden="true">
+    <div class="side-socials">
+      <a href="#" class="magnetic" aria-label="GitHub">GH</a>
+      <a href="#" class="magnetic" aria-label="LinkedIn">LI</a>
+      <a href="#" class="magnetic" aria-label="Dribbble">DR</a>
+      <a href="#" class="magnetic" aria-label="X">X</a>
+    </div>
+    <div class="side-line"></div>
+  </aside>
+  <aside class="side side-right" aria-hidden="true">
+    <div class="side-email"><a href="mailto:hello@alexvega.dev" class="magnetic">hello@alexvega.dev</a></div>
+    <div class="side-line"></div>
+  </aside>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-meta">
+        <div class="meta-item"><span class="dot"></span>AVAILABLE FOR WORK · Q3 2026</div>
+        <div class="meta-item mono">LAT 37.7749° · LON -122.4194°</div>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line"><span class="word reveal">Building</span> <span class="word reveal">the</span></span>
+        <span class="line"><span class="word reveal gradient">interfaces</span></span>
+        <span class="line"><span class="word reveal">of</span> <span class="word reveal">tomorrow.</span></span>
+      </h1>
+
+      <div class="hero-sub">
+        <p>
+          <span class="sub-bracket">[</span>
+          Full-stack engineer & creative technologist.
+          I design and ship <em id="typewriter" class="tw"></em>
+          <span class="sub-bracket">]</span>
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary magnetic">
+          <span class="btn-inner">
+            <span class="btn-text">Explore Work</span>
+            <span class="btn-text btn-text-hover">Explore Work</span>
+          </span>
+          <span class="btn-icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="#contact" class="btn btn-ghost magnetic">
+          <span class="btn-inner">
+            <span class="btn-text">Get In Touch</span>
+            <span class="btn-text btn-text-hover">Get In Touch</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- Orbit / HUD graphic -->
+      <div class="hud" aria-hidden="true">
+        <div class="hud-ring hud-ring-1"></div>
+        <div class="hud-ring hud-ring-2"></div>
+        <div class="hud-ring hud-ring-3"></div>
+        <div class="hud-core"></div>
+        <div class="hud-label hud-label-1">SYS.ONLINE</div>
+        <div class="hud-label hud-label-2">v4.2.1</div>
+        <div class="hud-label hud-label-3">NODE_07</div>
+      </div>
+
+      <!-- Marquee ticker -->
+      <div class="ticker">
+        <div class="ticker-track">
+          <span>CREATIVE DEV</span><span class="sep">◆</span>
+          <span>WEBGL</span><span class="sep">◆</span>
+          <span>INTERACTION DESIGN</span><span class="sep">◆</span>
+          <span>SHIPPED · 120+ PROJECTS</span><span class="sep">◆</span>
+          <span>AWWWARDS · 4×</span><span class="sep">◆</span>
+          <span>CREATIVE DEV</span><span class="sep">◆</span>
+          <span>WEBGL</span><span class="sep">◆</span>
+          <span>INTERACTION DESIGN</span><span class="sep">◆</span>
+          <span>SHIPPED · 120+ PROJECTS</span><span class="sep">◆</span>
+          <span>AWWWARDS · 4×</span><span class="sep">◆</span>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue magnetic" aria-label="Scroll down">
+        <span>SCROLL</span>
+        <span class="scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="section-head">
+        <span class="section-num">02 —</span>
+        <h2 class="section-title"><span class="reveal">About</span> <span class="reveal gradient">the&nbsp;engineer</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy glass">
+          <p class="lead">
+            I'm Alex — a full-stack engineer with a designer's eye, building
+            <span class="hl">fast</span>, <span class="hl">expressive</span>, and
+            <span class="hl">accessible</span> products for ambitious teams.
+          </p>
+          <p>
+            For almost a decade I've been translating complex ideas into
+            interfaces that feel effortless. I care about typography,
+            micro-interactions, and the invisible 80% that makes software feel
+            alive.
+          </p>
+          <p class="mono subtle">
+            PREVIOUSLY · Stripe · Framer · Linear · Arc · Independent Studio
+          </p>
+        </div>
+
+        <div class="stats">
+          <div class="stat glass tilt">
+            <div class="stat-num" data-count="9">0</div>
+            <div class="stat-label">Years<br/>Shipping</div>
+          </div>
+          <div class="stat glass tilt">
+            <div class="stat-num" data-count="124">0</div>
+            <div class="stat-label">Projects<br/>Delivered</div>
+          </div>
+          <div class="stat glass tilt">
+            <div class="stat-num" data-count="42">0</div>
+            <div class="stat-label">Happy<br/>Clients</div>
+          </div>
+          <div class="stat glass tilt">
+            <div class="stat-num" data-count="17">0</div>
+            <div class="stat-label">Awards<br/>Won</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section work">
+      <div class="section-head">
+        <span class="section-num">03 —</span>
+        <h2 class="section-title"><span class="reveal">Selected</span> <span class="reveal gradient">work</span></h2>
+      </div>
+
+      <div class="projects">
+        <article class="project tilt">
+          <div class="project-media" style="--c1:#00f5ff;--c2:#0066ff">
+            <div class="project-code">
+              <span class="prompt">$</span> deploy nebula --prod<br/>
+              <span class="ok">✓</span> build complete · 2.4s<br/>
+              <span class="ok">✓</span> 99.98% uptime<br/>
+            </div>
+            <div class="project-orb"></div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span>01 / Platform</span>
+              <span>2026</span>
+            </div>
+            <h3 class="project-title">Nebula Cloud</h3>
+            <p class="project-desc">Developer platform orchestrating edge deployments across 200+ regions with sub-second cold starts.</p>
+            <div class="project-tags">
+              <span>Next.js</span><span>Rust</span><span>WebGL</span><span>K8s</span>
+            </div>
+          </div>
+          <div class="project-corner"></div>
+        </article>
+
+        <article class="project tilt">
+          <div class="project-media" style="--c1:#b845ff;--c2:#ff2bd6">
+            <div class="project-waves">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span>02 / Fintech</span>
+              <span>2025</span>
+            </div>
+            <h3 class="project-title">Vector Pay</h3>
+            <p class="project-desc">Real-time payments dashboard visualizing 4M+ transactions per day with fluid motion and zero jank.</p>
+            <div class="project-tags">
+              <span>React</span><span>D3</span><span>GraphQL</span><span>Go</span>
+            </div>
+          </div>
+          <div class="project-corner"></div>
+        </article>
+
+        <article class="project tilt">
+          <div class="project-media" style="--c1:#ff7a00;--c2:#ffcf00">
+            <div class="project-rings">
+              <div></div><div></div><div></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span>03 / AI</span>
+              <span>2025</span>
+            </div>
+            <h3 class="project-title">Synth Studio</h3>
+            <p class="project-desc">Generative design tool that turns natural language into production-ready UI components.</p>
+            <div class="project-tags">
+              <span>TypeScript</span><span>LLMs</span><span>Canvas</span><span>WASM</span>
+            </div>
+          </div>
+          <div class="project-corner"></div>
+        </article>
+
+        <article class="project tilt">
+          <div class="project-media" style="--c1:#23ff88;--c2:#00c3ff">
+            <div class="project-grid-art">
+              <div></div><div></div><div></div><div></div>
+              <div></div><div></div><div></div><div></div>
+              <div></div><div></div><div></div><div></div>
+              <div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span>04 / Robotics</span>
+              <span>2024</span>
+            </div>
+            <h3 class="project-title">Orbit OS</h3>
+            <p class="project-desc">Control plane for autonomous warehouse fleets — real-time telemetry from 12k devices.</p>
+            <div class="project-tags">
+              <span>Elixir</span><span>React</span><span>MQTT</span><span>Three.js</span>
+            </div>
+          </div>
+          <div class="project-corner"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="section stack">
+      <div class="section-head">
+        <span class="section-num">04 —</span>
+        <h2 class="section-title"><span class="reveal">Tech</span> <span class="reveal gradient">stack</span></h2>
+      </div>
+
+      <div class="stack-grid">
+        <div class="stack-col">
+          <h4 class="stack-heading">Frontend</h4>
+          <ul class="stack-list">
+            <li><span>TypeScript</span><span class="bar"><i style="--w:96%"></i></span></li>
+            <li><span>React / Next.js</span><span class="bar"><i style="--w:94%"></i></span></li>
+            <li><span>Three.js / WebGL</span><span class="bar"><i style="--w:82%"></i></span></li>
+            <li><span>GSAP / Framer Motion</span><span class="bar"><i style="--w:90%"></i></span></li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h4 class="stack-heading">Backend</h4>
+          <ul class="stack-list">
+            <li><span>Node.js</span><span class="bar"><i style="--w:92%"></i></span></li>
+            <li><span>Rust</span><span class="bar"><i style="--w:78%"></i></span></li>
+            <li><span>Go</span><span class="bar"><i style="--w:74%"></i></span></li>
+            <li><span>PostgreSQL / Redis</span><span class="bar"><i style="--w:88%"></i></span></li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h4 class="stack-heading">Platform</h4>
+          <ul class="stack-list">
+            <li><span>AWS / GCP</span><span class="bar"><i style="--w:86%"></i></span></li>
+            <li><span>Kubernetes</span><span class="bar"><i style="--w:80%"></i></span></li>
+            <li><span>Terraform</span><span class="bar"><i style="--w:72%"></i></span></li>
+            <li><span>Observability</span><span class="bar"><i style="--w:84%"></i></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tag cloud -->
+      <div class="tag-cloud">
+        <span>TypeScript</span><span>React</span><span>Next.js</span><span>Rust</span>
+        <span>GraphQL</span><span>WebGL</span><span>Three.js</span><span>GSAP</span>
+        <span>Postgres</span><span>Redis</span><span>Kafka</span><span>K8s</span>
+        <span>Terraform</span><span>AWS</span><span>Figma</span><span>Motion</span>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="section-head center">
+        <span class="section-num">05 —</span>
+        <h2 class="section-title huge">
+          <span class="reveal">Let's build</span><br/>
+          <span class="reveal gradient">something&nbsp;bold.</span>
+        </h2>
+      </div>
+
+      <div class="contact-card glass">
+        <div class="contact-text">
+          <p>Have a project in mind, or just want to say hi?<br/>The inbox is always open.</p>
+        </div>
+        <a href="mailto:hello@alexvega.dev" class="contact-cta magnetic">
+          <span>hello@alexvega.dev</span>
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 19 L19 5 M9 5h10v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-row">
+        <span>© 2026 Alex Vega</span>
+        <span class="mono">v4.2.1 · Built with care in San Francisco</span>
+        <a href="#home" class="magnetic">Back to top ↑</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
